@@ -25,6 +25,10 @@
 # For example, if given: [('foo', 1), ('bar', 3)]
 # it should return {'foo': 1, 'bar': 3}
 
+def dictionary_maker(myTuple: list):
+    return dict((x, y) for x, y in myTuple)
+
+dictionary_maker([('foo', 1), ('bar', 3)])
 
 
 ############################################
@@ -124,6 +128,11 @@
 #
 # The function should return the country with the
 # greatest total amount of cases
+
+def country_with_most_cases(data: dict):
+    return max(data, key=lambda x: sum(data[x]))
+
+country_with_most_cases({'Spain': [4, 8, 2, 0, 1], 'France': [2, 3, 6], 'Italy': [6, 8, 1, 7]})
 
 
 
