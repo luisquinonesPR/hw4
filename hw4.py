@@ -66,7 +66,11 @@ def dictionary_maker(myTuple: list):
 # are the number of users that have done
 # that job.
 
-
+def job_counts(cvList: list):
+    for i in range(len(cvList)):
+        cvList[i]['jobs'] = list(set(cvList[i]['jobs']))
+        
+    return(dict(Counter(chain(*(x['jobs'] for x in cvList)))))
 
 #
 # 6)
@@ -83,6 +87,11 @@ def dictionary_maker(myTuple: list):
 # dictionaries to iterate over them like a
 # list of tuples.
 
+def most_popular_job(cvList: list):
+    jc = job_counts(cvList)
+    maximum = max(jc, key=jc.get)
+    
+    return ((maximum, jc[maximum]))
 
 
 ##############
