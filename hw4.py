@@ -7,12 +7,14 @@
 #
 
 
+
 # 2)
 # Create a function named "subtract" that
 # takes two parameters and returns the result of
 # the second value subtracted from the first.
 #
-
+def substract(x, y):
+    return x - y 
 
 # 3)
 # Create a function called "dictionary_maker"
@@ -56,6 +58,9 @@ def dictionary_maker(myTuple: list):
 # has worked as job_title.
 
 
+    
+
+
 
 #
 # 5)
@@ -69,7 +74,7 @@ def dictionary_maker(myTuple: list):
 def job_counts(cvList: list):
     for i in range(len(cvList)):
         cvList[i]['jobs'] = list(set(cvList[i]['jobs']))
-        
+
     return(dict(Counter(chain(*(x['jobs'] for x in cvList)))))
 
 #
@@ -90,7 +95,7 @@ def job_counts(cvList: list):
 def most_popular_job(cvList: list):
     jc = job_counts(cvList)
     maximum = max(jc, key=jc.get)
-    
+
     return ((maximum, jc[maximum]))
 
 
@@ -117,6 +122,7 @@ def most_popular_job(cvList: list):
 # registered so far in that country
 
 
+
 # 8)
 # Create a function called "total_registered_cases_per_country"
 # that has 1 parameter:
@@ -126,6 +132,12 @@ def most_popular_job(cvList: list):
 # per each country and as value the total number of cases
 # registered so far that the country had
 #
+
+def total_registered_cases_per_country(data):
+    countries = {}
+    for i in data.keys():
+        countries[i] = sum(data[i])
+    return countries
 
 
 # 9)
@@ -149,6 +161,3 @@ def country_with_most_cases(data: dict):
 # for those countries that have more than 500, 1000 and 5000
 # active cases respectively.
 # Follow DRY principles in order to complete this exercise.
-#
-#
-# #
