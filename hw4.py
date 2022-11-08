@@ -51,7 +51,7 @@ def dictionary_maker(myTuple: list):
 # Create a function called "has_experience_as"
 # that has two parameters:
 # 1. A list of CV's.
-# 2. A string (job_titlew)
+# 2. A string (job_title)
 #
 # The function should return a list of strings
 # representing the usernames of every user that
