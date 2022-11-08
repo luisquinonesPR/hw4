@@ -133,7 +133,7 @@ def most_popular_job(cvList: list):
 # registered so far that the country had
 #
 
-def total_registered_cases_per_country(data):
+def total_registered_cases_per_country(data: dict):
     countries = {}
     for i in data.keys():
         countries[i] = sum(data[i])
