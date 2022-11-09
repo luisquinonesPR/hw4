@@ -6,6 +6,8 @@
 # by three.
 #
 
+def triple(x):
+    return x * 3
 
 
 # 2)
@@ -57,6 +59,14 @@ def dictionary_maker(myTuple: list):
 # representing the usernames of every user that
 # has worked as job_title.
 
+def has_experience_as(cvs, job_title):
+    experienced_users = []
+    
+    for cv in cvs:
+        if job_title in cv['jobs']:
+            experienced_users.append(cv['user'])
+    
+    return experienced_users
 
     
 
@@ -121,8 +131,8 @@ def most_popular_job(cvList: list):
 # The function should return the total number of cases
 # registered so far in that country
 
-
-
+def total_registered_cases(covid_count, country):
+      return sum(covid_count[country])
 # 8)
 # Create a function called "total_registered_cases_per_country"
 # that has 1 parameter:
