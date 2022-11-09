@@ -12,11 +12,13 @@
 # #
 
 import pandas as pd
-df = pd.read_csv("/Users/luisquinonespr/code/hw4/data/covid.csv")
 
-for i in ['Deaths', 'Confirmed']:
-    for n in [500,1000,5000]:
-        rows = df[i] > n
-        avg = df[rows][i].mean()
-        print('Average number of deaths greater than ' + str(n) + ": " + str(avg))
-        print(df[rows][['Country', i]])
+covid =pd.read_csv('/Users/luisquinonespr/code/hw4/data/covid.csv', sep=',', low_memory=False)
+covid['Death rate']=covid['Deaths']/covid['Confirmed']
+
+for i in ['Death rate']:
+    for n in [500, 1000, 5000]:
+        rows=covid['Active'] > n
+        deathrate = covid['Death rate'][rows].mean()
+        print('Mean death rate for countries  ' + str(n) + ' active cases' + ': ' + "{:.2%}".format(deathrate))
+        print(covid[rows][['Country']])
