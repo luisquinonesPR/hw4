@@ -9,12 +9,14 @@
 def triple(x):
     return x * 3
 
+
 # 2)
 # Create a function named "subtract" that
 # takes two parameters and returns the result of
 # the second value subtracted from the first.
 #
-
+def substract(x, y):
+    return x - y 
 
 # 3)
 # Create a function called "dictionary_maker"
@@ -66,6 +68,9 @@ def has_experience_as(cvs, job_title):
     
     return experienced_users
 
+    
+
+
 
 #
 # 5)
@@ -79,7 +84,7 @@ def has_experience_as(cvs, job_title):
 def job_counts(cvList: list):
     for i in range(len(cvList)):
         cvList[i]['jobs'] = list(set(cvList[i]['jobs']))
-        
+
     return(dict(Counter(chain(*(x['jobs'] for x in cvList)))))
 
 #
@@ -100,7 +105,7 @@ def job_counts(cvList: list):
 def most_popular_job(cvList: list):
     jc = job_counts(cvList)
     maximum = max(jc, key=jc.get)
-    
+
     return ((maximum, jc[maximum]))
 
 
@@ -138,6 +143,12 @@ def total_registered_cases(covid_count, country):
 # registered so far that the country had
 #
 
+def total_registered_cases_per_country(data: dict):
+    countries = {}
+    for i in data.keys():
+        countries[i] = sum(data[i])
+    return countries
+
 
 # 9)
 # Create a function called "country_with_most_cases"
@@ -160,6 +171,3 @@ def country_with_most_cases(data: dict):
 # for those countries that have more than 500, 1000 and 5000
 # active cases respectively.
 # Follow DRY principles in order to complete this exercise.
-#
-#
-# #
